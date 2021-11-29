@@ -2,7 +2,7 @@ import datetime
 
 import eks_module
 import os
-'''
+
 with open('input.txt', 'r') as file:
     a, b = map(int, file.readline().strip().split())
     filename = file.readline().strip()
@@ -57,8 +57,7 @@ with open('output.txt', 'w') as f:
     f.write(str(total))
     f.write(datetime.time() - start_time)
     file.close()
-'''
+
 # ------------------------------------------------------------------------------------------------------#
 
-import numpy as np
 
