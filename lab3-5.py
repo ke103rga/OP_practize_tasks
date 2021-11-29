@@ -1,6 +1,0 @@
-name = input('Введите ваше имя')
-surname = input('Введите вашу фамилию')
-group = input('Введите ваш номер группы')
-print(F'Привет, {surname} {name} из группы {group}')
-adress = input('Введи свою электронную почту?')
-print((surname[:5] + name[:5] * 2 + adress[:5] * 3).lower())
