@@ -31,9 +31,9 @@ def result(method, types_of_list):
     """
     :param method: method of sorting
     :param types_of_list: pandas.Series object with different types of lists
-    :return: dict where keys are types of lists and values are time of working for this method
+    :return: pandas.Series object, where index are types of lists and values are time of working for this method
     """
-    results = {}
+    results = pd.Series([], [], dtype=float)
     list_for_check = [random.randint(-10000, 10000) for _ in range(30)]
     if check(method(list_for_check)):
         for index in types_of_list.index:
@@ -49,7 +49,7 @@ def table_of_results(types_of_list, methods):
     :return: pandas.DataFrame object where index are names of methods and columns are types of lists
     """
     my_index = list(map(lambda func: func.__name__, methods))
-    my_data = [result(method, types_of_list).values() for method in methods]
+    my_data = [result(method, types_of_list)[:] for method in methods]
     my_columns = types_of_list.index
     table = pd.DataFrame(data=my_data, index=my_index, columns=my_columns)
     return table
